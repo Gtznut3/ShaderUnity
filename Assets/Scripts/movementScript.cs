@@ -20,12 +20,12 @@ public class movementScript : MonoBehaviour
 
     public void MoveForward(float multiply = 1f)
     {
-        transform.Translate(Vector3.up * speed * Time.deltaTime * multiply);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime * multiply);
     }
 
     public void MoveBackward(float multiply = 1f)
     {
-        transform.Translate(Vector3.down * speed * Time.deltaTime * multiply);
+        transform.Translate(Vector3.back * speed * Time.deltaTime * multiply);
     }
 
     public void MyRotate(float x, float y, float z )

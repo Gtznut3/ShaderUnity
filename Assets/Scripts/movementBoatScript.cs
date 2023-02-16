@@ -36,18 +36,18 @@ public class movementBoatScript : MonoBehaviour
             switch (input)
             {
                 case MovementInput.Forward:
-                    _movementScript.MoveForward(1);
+                    _movementScript.MoveForward(10);
                     break;
                 case MovementInput.Backward:
-                    _movementScript.MoveBackward(1);
+                    _movementScript.MoveBackward(10);
                     break;
                 case MovementInput.Left:
                     _movementScript.MoveForward(0.5f);
-                    _movementScript.MyRotate(0, 0, 1f);
+                    _movementScript.MyRotate(0, -1f, 0);
                     break;
                 case MovementInput.Right:
                     _movementScript.MoveForward(0.5f);
-                    _movementScript.MyRotate(0, 0, -1f);
+                    _movementScript.MyRotate(0, 1f, 0);
                     break;
                 default: break;
             }
