@@ -32,8 +32,21 @@ public class collectRessourcesIslandScript : MonoBehaviour
 
     public void OnClick()
     {
+        if (islandObject != null)
+        {
+            islandCoins = islandObject.GetComponent<islandCoinsScript>();
+            islandWood = islandObject.GetComponent<islandWoodScript>();
+            islandRock = islandObject.GetComponent<islandRockScript>();
+        }
+
         if (islandCoins != null) islandCoins.GetCoins();
         if (islandWood != null) islandWood.GetWoods();
         if (islandRock != null) islandRock.GetRocks();
+    }
+
+    public void SetIslandObject(string islandString)
+    {
+        nameIsland = islandString;
+        islandObject = GameObject.Find(nameIsland);
     }
 }

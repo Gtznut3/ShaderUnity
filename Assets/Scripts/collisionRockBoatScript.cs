@@ -22,6 +22,7 @@ public class collisionRockBoatScript : MonoBehaviour
         if (collision.gameObject.tag == "Rock")
         {
             transform.GetComponent<CapsuleCollider>().isTrigger = true;
+            transform.GetComponent<BoxCollider>().isTrigger = true;
             _isCollide = true;
         }
     }

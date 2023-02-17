@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class islandCoinsScript : MonoBehaviour
 {
@@ -30,5 +31,15 @@ public class islandCoinsScript : MonoBehaviour
     {
         if (numberCoins + coin > numberCoinsMax) numberCoins = numberCoinsMax;
         else numberCoins += coin;
+    }
+
+    public float GetMaxCoins()
+    {
+        return numberCoinsMax;
+    }
+
+    public int GetNumberCoins()
+    {
+        return (int)numberCoins;
     }
 }

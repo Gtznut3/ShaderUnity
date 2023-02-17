@@ -30,4 +30,14 @@ public class islandRockScript : MonoBehaviour
         if (numberRock + rock > numberRockMax) numberRock = numberRockMax;
         else numberRock += rock;
     }
+
+    public float GetMaxRock()
+    {
+        return numberRockMax;
+    }
+
+    public int GetNumberRock()
+    {
+        return (int)numberRock;
+    }
 }

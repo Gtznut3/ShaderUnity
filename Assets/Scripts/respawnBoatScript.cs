@@ -18,10 +18,11 @@ public class respawnBoatScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y <= -6f)
+        if (transform.position.y <= -15f)
         {
             transform.SetLocalPositionAndRotation(startPos, transform.localRotation);
             transform.GetComponent<CapsuleCollider>().isTrigger = false;
+            transform.GetComponent<BoxCollider>().isTrigger = false;
 
             _collisionBoatScript.setIsCollide(false);
         }

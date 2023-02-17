@@ -30,4 +30,14 @@ public class islandWoodScript : MonoBehaviour
         if (numberWood + wood > numberWoodMax) numberWood = numberWoodMax;
         else numberWood += wood;
     }
+
+    public float GetMaxWood()
+    {
+        return numberWoodMax;
+    }
+
+    public int GetNumberWood()
+    {
+        return (int)numberWood;
+    }
 }
