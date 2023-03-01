@@ -7,9 +7,17 @@ public class islandWoodScript : MonoBehaviour
     [SerializeField] private float numberWoodMax;
     [SerializeField] private float numberWood;
     [SerializeField] private float timeNumberWoodMax;
+
+    private GameObject ship;
+
+    private InventoryRessourcesManagementScript inventoryWoods;
+
     // Start is called before the first frame update
     void Start()
     {
+        ship = GameObject.FindGameObjectWithTag("Player");
+
+        inventoryWoods = ship.GetComponent<InventoryRessourcesManagementScript>();
     }
 
     // Update is called once per frame
@@ -21,7 +29,8 @@ public class islandWoodScript : MonoBehaviour
 
     public void GetWoods()
     {
-        Debug.Log("you get " + (int)numberWood + " Woods");
+        //Debug.Log("you get " + (int)numberWood + " Woods");
+        inventoryWoods.AddInventoryWood((int)numberWood);
         numberWood -= (int)numberWood;
     }
 

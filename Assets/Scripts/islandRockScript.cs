@@ -7,9 +7,17 @@ public class islandRockScript : MonoBehaviour
     [SerializeField] private float numberRockMax;
     [SerializeField] private float numberRock;
     [SerializeField] private float timeNumberRockMax;
+
+    private GameObject ship;
+
+    private InventoryRessourcesManagementScript inventoryRocks;
+
     // Start is called before the first frame update
     void Start()
     {
+        ship = GameObject.FindGameObjectWithTag("Player");
+
+        inventoryRocks = ship.GetComponent<InventoryRessourcesManagementScript>();
     }
 
     // Update is called once per frame
@@ -21,7 +29,8 @@ public class islandRockScript : MonoBehaviour
 
     public void GetRocks()
     {
-        Debug.Log("you get " + (int)numberRock + " Rocks");
+        //Debug.Log("you get " + (int)numberRock + " Rocks");
+        inventoryRocks.AddInventoryRock((int)numberRock);
         numberRock -= (int)numberRock;
     }
 

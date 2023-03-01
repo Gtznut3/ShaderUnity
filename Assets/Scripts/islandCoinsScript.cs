@@ -9,9 +9,16 @@ public class islandCoinsScript : MonoBehaviour
     [SerializeField] private float numberCoins;
     [SerializeField] private float timeNumberCoinsMax;
 
+    private GameObject ship;
+
+    private InventoryRessourcesManagementScript inventoryCoins;
+
     // Start is called before the first frame update
     void Start()
     {
+        ship = GameObject.FindGameObjectWithTag("Player");
+
+        inventoryCoins = ship.GetComponent<InventoryRessourcesManagementScript>();
     }
 
     // Update is called once per frame
@@ -23,7 +30,8 @@ public class islandCoinsScript : MonoBehaviour
 
     public void GetCoins()
     {
-        Debug.Log("you get " + (int)numberCoins + " coins");
+        Debug.Log(inventoryCoins);
+        inventoryCoins.AddInventoryCoins((int)numberCoins);
         numberCoins -= (int)numberCoins;
     }
 
